@@ -7,6 +7,9 @@
             {{#if name}}
             <strong>{{name}}</strong> {{#if issuer}}: {{issuer}} {{/if}}
             {{/if}}
+            {{#if url}}
+            {{wrapURL url}}
+            {{/if}}
         </li>
         {{/each}}
     </ul>

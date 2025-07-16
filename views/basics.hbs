@@ -8,12 +8,14 @@
         {{#if email~}}
         <span class="vertical-separator">{{wrapMail email}}</span>
         {{~/if}}
-        {{#if phone~}}
+        {{!-- {{#if phone~}}
         <span class="vertical-separator">{{phone}}</span>
-        {{~/if}}
-        {{#if location~}}{{#if location.city~}}{{#if location.countryCode~}}
-        <span class="vertical-separator">{{location.city}}, {{location.countryCode}}</span>
-        {{~/if}}{{~/if}}{{~/if}}
+        {{~/if}} --}}
+        {{#each resume.profiles}}
+        {{#if network~}}
+        <span class="vertical-separator"><a href="{{url}}">{{network}}</a></span>
+        {{/if}}
+        {{/each}}
         {{#if url~}}
         <span class="vertical-separator">{{wrapURL url}}</span>
         {{~/if}}
