@@ -11,14 +11,9 @@
         {{!-- {{#if phone~}}
         <span class="vertical-separator">{{phone}}</span>
         {{~/if}} --}}
-        {{#each resume.profiles}}
-        {{#if network~}}
-        <span class="vertical-separator"><a href="{{url}}">{{network}}</a></span>
-        {{/if}}
+        {{#each profiles}}
+        <span class="vertical-separator">{{network}} : <a href="{{url}}">{{username}}</a></span>
         {{/each}}
-        {{#if url~}}
-        <span class="vertical-separator">{{wrapURL url}}</span>
-        {{~/if}}
     </div>
     {{#if summary}}
     <div class="summary">
