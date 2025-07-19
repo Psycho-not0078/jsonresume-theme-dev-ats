@@ -106,6 +106,8 @@ a {
 a {
     word-break: break-all;
     overflow-wrap: break-word;
+    text-decoration: underline;
+    color: blue;
 }
 
 /* Set some print settings. */
