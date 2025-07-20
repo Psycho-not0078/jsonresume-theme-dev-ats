@@ -3,41 +3,39 @@
   <h2>Projects</h2>
   <div class="item">
     {{#each resume.projects}}
-      {{#if name}}{{#if description}}
-        
-        {{#if url}}
-          {{#> item
-            title=name
-            subtitle=description
-            url=url
-            mainUrl='y'
-          }}
-        {{#if highlights.length}}
-          <ul class="highlights">
-              {{#each highlights}}
-              <li>{{{.}}}</li>
-              {{/each}}
-          </ul>
-        {{/if}}
-          {{/item}}
-        {{else}}
-          {{#> item
-            title=name
-            subtitle=description
-            url=''
-            mainUrl=''
-          }}
-          {{#if highlights.length}}
-            <ul class="highlights">
-                {{#each highlights}}
-                <li>{{{.}}}</li>
-                {{/each}}
-            </ul>
-          {{/if}}
-          {{/item}}
-        {{/if}}{{/if}}
-        
-      {{/if}}
+    {{#if name}}{{#if description}}
+
+    {{#if url}}
+    {{#> item
+    title=name
+    url=url
+    mainUrl='y'
+    }}
+    {{#if highlights.length}}
+    <ul class="highlights">
+      {{#each highlights}}
+      <li>{{{.}}}</li>
+      {{/each}}
+    </ul>
+    {{/if}}
+    {{/item}}
+    {{else}}
+    {{#> item
+    title=name
+    url=''
+    mainUrl=''
+    }}
+    {{#if highlights.length}}
+    <ul class="highlights">
+      {{#each highlights}}
+      <li>{{{.}}}</li>
+      {{/each}}
+    </ul>
+    {{/if}}
+    {{/item}}
+    {{/if}}{{/if}}
+
+    {{/if}}
     {{/each}}
   </div>
 </section>
