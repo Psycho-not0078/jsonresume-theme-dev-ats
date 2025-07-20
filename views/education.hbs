@@ -2,18 +2,37 @@
 <section id="education">
     <h2>Education</h2>
     {{#each resume.education}}
-    {{#> item title=institution subtitle=(formatSubtitle studyType area) location=location startDate=startDate endDate=endDate url=url}}
+        {{#if area}}
+            {{#> item 
+                title=institution 
+                subtitle=(concat studyType " in " area) 
+                location=location 
+                startDate=startDate 
+                endDate=endDate 
+                url=url
+            }}
+        {{else}}
+            {{#> item 
+                title=institution 
+                subtitle=studyType 
+                location=location 
+                startDate=startDate 
+                endDate=endDate 
+                url=url
+            }}
+        {{/if}}
 
-    {{#if score}}
-    <ul>
-        <li>
-            <div class="score">
-                {{score}}
-            </div>
-        </li>
-    </ul>
-    {{/if}}
-    {{/item}}
+        {{#if score}}
+        <ul>
+            <li>
+                <div class="score">
+                    {{score}}
+                </div>
+            </li>
+        </ul>
+        {{/if}}
+
+        {{/item}}
     {{/each}}
 </section>
 {{/if}}

@@ -8,13 +8,12 @@ const
 
 Swag.registerHelpers(handlebars);
 
+handlebars.registerHelper('concat', function() {
+    arguments = [...arguments].slice(0, -1);
+    return arguments.join('');
+});
+
 handlebars.registerHelper({
-  formatSubtitle, function(studyType, area) {
-    if (area) {
-      return `${studyType} in ${area}`;
-    }
-    return studyType;
-  },
 
   wrapURL: function (url) {
     if (url === null || url === '' || url === "") return "";
