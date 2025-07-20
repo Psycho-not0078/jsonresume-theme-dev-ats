@@ -6,6 +6,7 @@
     {{#> item title=institution subtitle=(concat studyType "in" area) location=location startDate=startDate endDate=endDate url=url}}
     {{else}}
     {{#> item title=institution subtitle=studyType location=location startDate=startDate endDate=endDate url=url}}
+    {{/if}}
     {{#if score}}
     <ul>
         <li>
@@ -14,7 +15,6 @@
             </div>
         </li>
     </ul>
-    {{/if}}
     {{/if}}
     {{/item}}
     {{/each}}
