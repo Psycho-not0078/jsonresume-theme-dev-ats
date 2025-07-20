@@ -8,6 +8,11 @@ const
 
 Swag.registerHelpers(handlebars);
 
+handlebars.registerHelper('concat', function() {
+    arguments = [...arguments].slice(0, -1);
+    return arguments.join('');
+});
+
 handlebars.registerHelper({
 
   wrapURL: function (url) {
