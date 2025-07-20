@@ -12,6 +12,13 @@
             url=url
             mainUrl='y'
           }}
+        {{#if highlights.length}}
+          <ul class="highlights">
+              {{#each highlights}}
+              <li>{{{.}}}</li>
+              {{/each}}
+          </ul>
+        {{/if}}
           {{/item}}
         {{else}}
           {{#> item
@@ -20,6 +27,13 @@
             url=''
             mainUrl=''
           }}
+          {{#if highlights.length}}
+            <ul class="highlights">
+                {{#each highlights}}
+                <li>{{{.}}}</li>
+                {{/each}}
+            </ul>
+          {{/if}}
           {{/item}}
         {{/if}}{{/if}}
         
