@@ -9,7 +9,7 @@ const
 Swag.registerHelpers(handlebars);
 
 handlebars.registerHelper({
-  formatSubtitle, function(studyType, area) {
+  formatSubtitle: function (studyType, area) {
     if (area) {
       return `${studyType} in ${area}`;
     }
