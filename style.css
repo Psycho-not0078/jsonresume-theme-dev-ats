@@ -111,37 +111,45 @@ a {
 }
 
 /* Set some print settings. */
+.item {
+    margin-top: 8px;
+    overflow: hidden;          
+}
+
 @media print {
     @page {
-        size: portrait;
-        margin: 10mm 25mm;
+        size: A4 portrait;      
+        margin: 15mm 18mm;       
     }
     .resume {
         max-width: 100%;
-        border: 0px;
+        border: 0;
         background: #fff;
         box-shadow: none;
-        -webkit-box-shadow: none;
     }
-    body,
-    html,
-    .resume {
-        margin: 0px;
-        padding: 0px;
+    body, html, .resume {
+        margin: 0;
+        padding: 0;
     }
-    .controls {
-        display: none;
-    }
+    .controls { display: none; }
+
+    
     .section {
-        page-break-inside: avoid; 
-        margin-bottom: 20px; 
+        margin-bottom: 14px;
     }
 
     .section h2 {
-        page-break-after: avoid; 
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+    .item,
+    .row {
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
-    .row, .col {
-        page-break-inside: avoid; 
+    p, li {
+        orphans: 3;
+        widows: 3;
     }
 }
